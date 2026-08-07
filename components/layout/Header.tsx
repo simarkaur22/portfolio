@@ -59,7 +59,6 @@ export const Header: React.FC = () => {
     const targetId = href.substring(1);
     const element = document.getElementById(targetId);
     if (element) {
-      // Ensure smooth scroll happens cleanly
       setTimeout(() => {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 50);
@@ -69,8 +68,8 @@ export const Header: React.FC = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-[var(--bg-page)]/95 backdrop-blur-md border-b border-[var(--border-subtle)] shadow-md py-3'
+        isScrolled || mobileMenuOpen
+          ? 'bg-[var(--bg-page)] backdrop-blur-xl border-b border-[var(--border-subtle)] shadow-xl py-3'
           : 'bg-transparent py-4 sm:py-5'
       }`}
     >
@@ -183,13 +182,13 @@ export const Header: React.FC = () => {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0, y: -10 }}
-            animate={{ opacity: 1, height: 'auto', y: 0 }}
-            exit={{ opacity: 0, height: 0, y: -10 }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="lg:hidden fixed top-full left-0 right-0 z-50 bg-[var(--bg-page)] border-b border-[var(--border-subtle)] shadow-2xl overflow-y-auto max-h-[85vh]"
+            className="lg:hidden absolute top-full left-0 right-0 z-50 bg-[var(--bg-page)] border-b border-[var(--border-subtle)] shadow-2xl px-6 py-6"
           >
-            <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-2">
+            <div className="max-w-7xl mx-auto flex flex-col gap-2">
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href.substring(1);
                 return (
