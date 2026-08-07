@@ -17,7 +17,7 @@ import { personalInfo } from '@/data/portfolioData';
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-24 relative z-10 bg-[var(--bg-page)]">
+    <section id="about" className="scroll-mt-24 py-16 sm:py-24 relative z-10 bg-[var(--bg-page)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

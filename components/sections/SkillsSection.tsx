@@ -28,7 +28,7 @@ export const SkillsSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState(0);
 
   return (
-    <section id="skills" className="py-24 relative z-10 bg-[var(--bg-page)]">
+    <section id="skills" className="scroll-mt-24 py-16 sm:py-24 relative z-10 bg-[var(--bg-page)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

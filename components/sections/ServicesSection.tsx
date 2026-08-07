@@ -28,7 +28,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export const ServicesSection: React.FC = () => {
   return (
-    <section id="services" className="py-24 relative z-10 bg-[var(--bg-page)]">
+    <section id="services" className="scroll-mt-24 py-16 sm:py-24 relative z-10 bg-[var(--bg-page)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
